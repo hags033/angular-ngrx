@@ -1,6 +1,6 @@
 <div class="user-input-form">
   <div class="user-intro">
-    Enter Users:
+    Enter Friends:
   </div>
   <form #form="ngForm" [formGroup]="addUserForm" (submit)="submit(form)">
     <mat-form-field>
@@ -39,10 +39,21 @@
   </form>
 </div>
 <div>
-  <div *ngFor="let user of users$ | async">
-    {{ user.name }}
-    {{ user.friends }}
-    {{ user.age }}
-    {{ user.weight }}
-  </div>
+  Entered Friends:
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Friends</th>
+      <th>Age</th>
+      <th>Weight</th>
+    </tr>
+      <ng-container *ngFor="let user of users$ | async">
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.friends }}</td>
+          <td>{{ user.age }}</td>
+          <td>{{ user.weight }}</td>
+        </tr>
+      </ng-container>
+  </table>
 </div>
