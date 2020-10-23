@@ -1,1 +1,40 @@
-<p>user-input works!</p>
+<div class="user-input-form">
+  <div class="user-intro">
+    Enter Users:
+  </div>
+  <form [formGroup]="loginForm" (submit)="submit()">
+    <mat-form-field>
+      <mat-label> Name
+      </mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="loginForm.controls.name.touched && loginForm.controls.name.invalid">
+        <span *ngIf="loginForm.controls.name.errors.required">This field is required.</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Friends
+      </mat-label>
+      <input matInput formControlName="friends" required>
+      <mat-error *ngIf="loginForm.controls.friends.touched && loginForm.controls.friends.invalid">
+        <span *ngIf="loginForm.controls.friends.errors.required">This field is required.</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Age
+      </mat-label>
+      <input matInput formControlName="age" type="number" required>
+      <mat-error *ngIf="loginForm.controls.age.touched && loginForm.controls.age.invalid">
+        <span *ngIf="loginForm.controls.age.errors.required">This field is required.</span>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Weight
+      </mat-label>
+      <input matInput formControlName="weight" type="number" required>
+      <mat-error *ngIf="loginForm.controls.weight.touched && loginForm.controls.weight.invalid">
+        <span *ngIf="loginForm.controls.weight.errors.required">This field is required.</span>
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>
