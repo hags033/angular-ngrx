@@ -1,6 +1,6 @@
-export interface userModel {
+export interface UserModel {
   name: string;
-  friends: Array<userModel>;
+  friends: string;
   age: number;
   weight: number;
 }
