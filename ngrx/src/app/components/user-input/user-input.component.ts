@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -44,7 +44,7 @@ export class UserInputComponent implements OnInit {
       friends: this.addUserForm.value.friends,
       age: this.addUserForm.value.age,
       weight: this.addUserForm.value.weight
-    }
+    };
     this.store.dispatch(addUser({ user }));
     form.resetForm();
   }

@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { UserModel } from '../components/user-input/user-model';
-import {addUser, loadUsers} from './user.actions';
+import { addUser } from './user.actions';
 
 export const userFeatureKey = 'users';
 
@@ -22,7 +22,6 @@ export const reducer = createReducer(
   initialState,
   on(addUser,
     (state, action) => {
-      console.log(action.user);
       return { ...state,
         users:   [...state.users, action.user]
       };

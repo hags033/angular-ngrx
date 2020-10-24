@@ -19,8 +19,6 @@ export class ScatterComponent implements OnInit, OnDestroy {
   margin = 50;
   width = 750 - (this.margin * 2);
   height = 400 - (this.margin * 2);
-  innerWidth = this.width - this.margin * 2;
-  innerHeight = this.height - this.margin * 2;
   users$: Observable<Array<UserModel>>;
   friends: Array<UserModel>;
   ngUnsubscribe = new Subject();
@@ -44,7 +42,7 @@ export class ScatterComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
-  private createSvg(): void {
+  createSvg(): void {
     this.svg = d3.select('figure#scatter')
       .append('svg')
       .attr('width', this.width + (this.margin * 2))
@@ -53,7 +51,7 @@ export class ScatterComponent implements OnInit, OnDestroy {
       .attr('transform', `translate(${this.margin},${this.margin})`);
   }
 
-  private drawPlot(): void {
+  drawPlot(): void {
     // Add X axis
     const x = d3.scaleLinear()
       .domain([0, 300])

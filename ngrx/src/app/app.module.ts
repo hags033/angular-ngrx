@@ -12,12 +12,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { UserInputComponent } from './components/user-input/user-input.component';
 import { reducer, userFeatureKey } from './store/user.reducer';
+import { ScatterComponent } from './components/scatter/scatter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserInputComponent
+    UserInputComponent,
+    ScatterComponent
   ],
   imports: [
     BrowserAnimationsModule,
